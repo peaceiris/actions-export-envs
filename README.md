@@ -1,6 +1,8 @@
 # actions-export-envs
 
-This action exports ACTIONS_RUNTIME_TOKEN and ACTIONS_CACHE_URL to enable the Docker layer caching on GitHub Actions.
+This action exports `ACTIONS_RUNTIME_TOKEN` and `ACTIONS_CACHE_URL` to enable the Docker layer caching on GitHub Actions.
+
+cf. [GitHub Actions cache | Docker Documentation](https://docs.docker.com/build/building/cache/backends/gha/)
 
 
 ## Usage
