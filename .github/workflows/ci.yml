@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/ci.yaml"
+      - "Makefile"
+      - "Dockerfile"
+      - ".dockerignore"
+      - "action.yml"
+      - "entrypoint.sh"
+  pull_request:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/ci.yaml"
+      - "Makefile"
+      - "Dockerfile"
+      - ".dockerignore"
+      - "action.yml"
+      - "entrypoint.sh"
+
+jobs:
+  docker:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # https://github.com/actions/checkout/releases/tag/v3.1.0
+      - uses: ./
+        id: envs
+      - run: make build
+        env:
+          ACTIONS_RUNTIME_TOKEN: ${{ steps.envs.outputs.ACTIONS_RUNTIME_TOKEN }}
+          ACTIONS_CACHE_URL: ${{ steps.envs.outputs.ACTIONS_CACHE_URL }}

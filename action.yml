@@ -1,0 +1,14 @@
+name: 'GitHub Actions environments exporter'
+description: 'GitHub Actions environments exporter'
+author: 'peaceiris'
+branding:
+  icon: 'upload'
+  color: 'gray-dark'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+outputs:
+  ACTIONS_RUNTIME_TOKEN:
+    description: 'ACTIONS_RUNTIME_TOKEN env'
+  ACTIONS_CACHE_URL:
+    description: 'ACTIONS_CACHE_URL env'
