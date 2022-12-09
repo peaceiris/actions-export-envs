@@ -9,9 +9,6 @@ cf. [GitHub Actions cache | Docker Documentation](https://docs.docker.com/build/
 
 Example:
 
-- https://github.com/peaceiris/hugo-extended-docker/blob/43ca6dc7587711fca59346e16e0c25264413f1a4/.github/workflows/ci.yml
-- https://github.com/peaceiris/hugo-extended-docker/blob/43ca6dc7587711fca59346e16e0c25264413f1a4/Makefile
-
 ```Makefile
 DOCKER_CLI_EXPERIMENTAL := enabled
 DOCKER_BUILDKIT := 1
@@ -32,6 +29,8 @@ build: setup-buildx
 		--cache-from "type=gha,scope=${DOCKER_SCOPE}" \
 		--cache-to "type=gha,mode=max,scope=${DOCKER_SCOPE}"
 ```
+
+https://github.com/peaceiris/actions-export-envs/blob/31e89d21c33421aee2c7780a6391715be3dd901a/Makefile#L12-L19
 
 ```yaml
 name: CI
@@ -54,3 +53,5 @@ jobs:
           ACTIONS_RUNTIME_TOKEN: ${{ steps.envs.outputs.ACTIONS_RUNTIME_TOKEN }}
           ACTIONS_CACHE_URL: ${{ steps.envs.outputs.ACTIONS_CACHE_URL }}
 ```
+
+https://github.com/peaceiris/actions-export-envs/blob/31e89d21c33421aee2c7780a6391715be3dd901a/.github/workflows/ci.yml#L48-L54
