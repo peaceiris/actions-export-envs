@@ -13,7 +13,7 @@ setup-buildx:
 build: setup-buildx
 	docker buildx build . \
 		--tag "${DOCKER_IMAGE_FULL_NAME}" \
-		--platform "linux/amd64" \
+		--platform "linux/amd64,linux/arm64" \
 		--output "type=docker" \
 		--cache-from "type=gha,scope=${DOCKER_SCOPE}" \
 		--cache-to "type=gha,mode=max,scope=${DOCKER_SCOPE}"
