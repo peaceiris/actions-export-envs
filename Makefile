@@ -1,4 +1,4 @@
-DOCKER_IMAGE_NAME := ghcr.io/peaceiris/peaceiris/actions-export-envs
+DOCKER_IMAGE_NAME := ghcr.io/peaceiris/actions-export-envs
 DOCKER_SCOPE := action-image-${GITHUB_REF_NAME}
 DOCKER_CLI_EXPERIMENTAL := enabled
 DOCKER_BUILDKIT := 1
