@@ -45,7 +45,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: peaceiris/actions-export-envs@v1.0.0
+      - uses: peaceiris/actions-export-envs@v1.1.0
         id: envs
 
       - run: make build
