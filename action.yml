@@ -14,3 +14,5 @@ outputs:
     description: 'ACTIONS_CACHE_URL env'
   ACTIONS_RESULTS_URL:
     description: 'ACTIONS_RESULTS_URL env'
+  ACTIONS_CACHE_SERVICE_V2:
+    description: 'ACTIONS_CACHE_SERVICE_V2 env'
